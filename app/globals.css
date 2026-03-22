@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* This connects your colors to Tailwind classes */
+    --color-forest: #1c2b1a;
+    --color-green: #3d6b35;
+    --color-sage: #8a9e7b;
+    --color-sage-light: #a8c49a;
+    --color-cream: #fdfcf8;
+    --color-bone: #eee9df;
+    --color-muted: #b0a898;
+    --color-border: #e8e4da;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-forest);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bone);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage);
+  border-radius: 2px;
+}
+
+/* Animated Gradient Button */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-bg {
+  background: linear-gradient(90deg, #ffffff, #f0ede6, #e8e4da, #ffffff);
+  background-size: 200% 200%;
+  animation: gradient-flow 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.animate-gradient-bg:hover {
+  background: linear-gradient(90deg, #1c2b1a, #2d4a2a, #1c2b1a);
+  animation: none;
+}
+.animate-gradient-text {
+  background-size: 300% 300%;
+  animation: gradient-flow 1.5s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+}
